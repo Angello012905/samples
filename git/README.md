@@ -3,7 +3,7 @@
 ## Perpare Application
 
 The Git buildpack requires that there be a valid `.git` folder in the
-application source directory. In order to provide and example application, the
+application source directory. In order to provide an example application, the
 app in question contains a directory named `.git.bak`. This file name will need
 to be changed to make this a valid application for the Git buildpack. Change
 the name with the following command.
@@ -24,7 +24,7 @@ pack build git-sample --path app \
 
 The Git buildpack set the `REVISION` environment variable during build for
 subsequent buildpacks to take advantage of during their build processes. It
-also sets this same value as a lable on the image. This value can be seen with
+also sets this same value as a label on the image. This value can be seen with
 the following command.
 ```bash
 docker inspect git-sample | jq -r '.[].Config.Labels."org.opencontainers.image.revision"'
