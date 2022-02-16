@@ -22,10 +22,10 @@ pack build git-sample --path app \
 
 ### Viewing
 
-The Git buildpack set the `REVISION` environment variable during build for
-subsequent buildpacks to take advantage of during their build processes. It
-also sets this same value as a label on the image. This value can be seen with
-the following command.
+The Git buildpack set the `REVISION` environment variable, which is the
+commitish of HEAD, during build for subsequent buildpacks to take advantage of
+during their build processes. It also sets this same value as a label on the
+image. This value can be seen with the following command.
 ```bash
 docker inspect git-sample | jq -r '.[].Config.Labels."org.opencontainers.image.revision"'
 ```
